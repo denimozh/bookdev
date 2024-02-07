@@ -1,19 +1,21 @@
 import React from 'react'
 import { FaArrowRightLong } from "react-icons/fa6";
-
+import styles from './style.module.css'
+import bestSellerPic from "./img/bestSellerPic.jpg";
+import giftbook from "./img/giftbook.webp";
 
 const CatalogPage = () => {
   return (
-    <div className='h-[96vh] px-4'>
+    <div className='h-[110vh] px-4'>
         <div className='flex flex-row h-[55%] gap-1'>
             <div className="w-[55%] bg-catalogBooks bg-auto rounded-[15px] bg-blend-soft-light bg-stone-700"  >
                 <div className='flex flex-col px-8 justify-between h-[100%] pb-10'>
-                    <div className='flex flex-row justify-between items-center' >
+                    <div className='flex flex-row justify-between items-center ' >
                         <div className='text-white pt-6 '>
                             <p className='text-6xl'>New Arrivals</p>
                         </div>
                         <div className='pt-2'>
-                            <div className='z-1 bg-black h-16 w-16 rounded-full flex items-center justify-center'>
+                            <div className='z-1 cursor-pointer bg-black h-16 w-16 rounded-full flex items-center justify-center hover:scale-105 ease-in-out duration-500'>
                                 <FaArrowRightLong className='text-[35px] text-white'/>
                             </div>
                         </div>
@@ -38,30 +40,145 @@ const CatalogPage = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-[45%] bg-white rounded-[15px]'>
+            <div className='w-[45%] bg-white rounded-[15px] group cursor-pointer hover:bg-[#d8dbf8] ease-in-out duration-500'>
                 <div className='flex flex-col px-8 h-[55%] gap-1'>
-                    <div className='flex flex-row items-center justify-between'>
+                    <div className='flex flex-row items-center justify-between '>
                         <div className='text-black pt-6'>
                             <p className='text-6xl'>Best Sellers</p>
                         </div>
                         <div className='pt-2'>
-                                <div className='z-1 bg-black h-16 w-16 rounded-full flex items-center justify-center'>
+                                <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-110 ease-in-out duration-500'>
                                     <FaArrowRightLong className='text-[35px] text-white'/>
                                 </div>
                         </div>
                     </div>
+                        <div className='flex items-center justify-center h-full'>
+                            <div className='relative flex justify-center items-center align-center h-[400px] w-[500px] pt-32'>
+                                <div className={styles.blob}>      
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
             </div>
         </div>
-        <div className='h-1/5'>
-                <div>
-                    <p>Best Sellers</p>
+        <div className='h-[65%] pt-1 grid grid-cols-[1fr_repeat(3,2fr)] grid-rows-[repeat(2,1fr)] gap-x-1 gap-y-1'>
+            <div className='cursor-default bg-[#FFE9D3] row-span-2 rounded-[25px] '>
+                <div className='flex flex-col '>
+                    <div className='w-[200px] -rotate-90'>
+                        <p className='text-8xl font-medium translate-y-4 -translate-x-[18rem] text-right'>All Genres</p>
+                    </div>
                 </div>
+            </div>
+            <div className='group cursor-pointer bg-[#F9A6A6] hover:bg-[#FB8484] rounded-[25px] ease-in-out duration-500'>
+                <div className='flex flex-row justify-between px-6'>
+                    <div className='pt-6 '>
+                        <p className='text-4xl font-medium'>Detective</p>
+                    </div>
+                    <div className='pt-2'>
+                                <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
+                                    <FaArrowRightLong className='text-[35px] text-white'/>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div className='group cursor-pointer bg-white rounded-[25px] hover:bg-[#F8F4D8] ease-in-out duration-500'>
+                <div className='flex flex-row justify-between px-6'>
+                    <div className='pt-6 '>
+                        <p className='text-4xl font-medium'>Fantasy</p>
+                    </div>
+                    <div className='pt-2'>
+                                <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
+                                    <FaArrowRightLong className='text-[35px] text-white'/>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div className='group cursor-pointer bg-[#F9A6A6] rounded-[25px] hover:bg-[#FB8484] ease-in-out duration-500'>
+                <div className='flex flex-row justify-between px-6'>
+                    <div className='pt-6 '>
+                        <p className='text-4xl font-medium'>Horror</p>
+                    </div>
+                    <div className='pt-2'>
+                                <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
+                                    <FaArrowRightLong className='text-[35px] text-white'/>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div className='group cursor-pointer bg-white rounded-[25px] hover:bg-[#F8F4D8] ease-in-out duration-500'>
+                <div className='flex flex-row justify-between px-6'>
+                    <div className='pt-6 '>
+                        <p className='text-4xl font-medium'>Cultural</p>
+                    </div>
+                    <div className='pt-2'>
+                                <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
+                                    <FaArrowRightLong className='text-[35px] text-white'/>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div className='group cursor-pointer bg-[#F9A6A6] hover:bg-[#FB8484] rounded-[25px] ease-in-out duration-500'>
+                <div className='flex flex-row justify-between px-6'>
+                    <div className='pt-6 '>
+                        <p className='text-4xl font-medium'>Education</p>
+                    </div>
+                    <div className='pt-2'>
+                                <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
+                                    <FaArrowRightLong className='text-[35px] text-white'/>
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <div className='group cursor-pointer bg-white rounded-[25px] hover:bg-[#F8F4D8] ease-in-out duration-500'>
+                <div className='flex flex-row justify-between px-6'>
+                    <div className='pt-6 '>
+                        <p className='text-4xl font-medium'>Science</p>
+                    </div>
+                    <div className='pt-2'>
+                                <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
+                                    <FaArrowRightLong className='text-[35px] text-white'/>
+                                </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div className='h-2/5'>
-            <div>
-                    <p>Best Sellers</p>
+        <div className='h-[55%] px-1 pt-1 pb-4'>
+            <div className='flex flex-row gap-1 h-[100%]'>
+                <div className='group cursor-pointer hover:bg-[#FB8484] flex flex-col basis-[43%] bg-[#F9A6A6] rounded-[25px] ease-in-out duration-500 h-[100%] px-6'>
+                    <div className='flex flex-row justify-between'>
+                        <div className='pt-6'>
+                            <p className='text-6xl font-medium'>Used Books</p>
+                        </div>
+                        <div className='pt-4'>
+                                    <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-110 ease-in-out duration-500'>
+                                        <FaArrowRightLong className='text-[35px] text-white'/>
+                                    </div>
+                        </div>
+                    </div>
+                    <div className='flex items-center justify-center h-full'>
+                            <div className='relative flex justify-center items-center align-center h-[400px] w-[500px] pt-5'>
+                                <div className={styles.blob1}>      
+                                </div>
+                            </div>
+                    </div>
                 </div>
+                <div className='group relative cursor-pointer basis-[57%] bg-white hover:bg-[#F8F4D8] rounded-[25px] h-[100%] ease-in-out duration-500 flex flex-col justify-between gap-20'>
+                    <div className='flex flex-row justify-between px-6'>
+                        <div className='pt-6 '>
+                            <p className='text-6xl font-medium'>Gift Edition</p>
+                        </div>
+                        <div className='pt-5'>
+                                    <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
+                                        <FaArrowRightLong className='text-[35px] text-white'/>
+                                    </div>
+                        </div>
+                    </div>
+                    <div className='px-6'>
+                        <img src={giftbook.src} className='w-[60%] h-[60%] rounded-[25px] group-hover:scale-95 ease-in-out duration-500'/>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
   )

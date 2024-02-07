@@ -1,0 +1,57 @@
+.blobSection{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.blob{
+    padding-top: 100px;
+    background-image: url("./img/bestSellerPic.jpg");
+    width: 380px;
+    height: 380px;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 5px 5px 5px rgba(13, 110, 0 253, 0.1);
+    animation: animate 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+
+.blob:hover{
+    transform: scale(1.2);
+}
+
+.blob1{
+    padding-top: 100px;
+    background-image: url("./img/usedBooks.png");
+    width: 380px;
+    height: 380px;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 5px 5px 5px rgba(13, 110, 0 253, 0.1);
+    animation: animate1 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+
+.blob1:hover{
+    transform: scale(1.2);
+}
+
+@keyframes animate{
+    0%, 100%{
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+}
+
+@keyframes animate1{
+    0%, 100%{
+        border-radius: 60% 30% 70% 40% / 60% 40% 30% 70%;
+    }
+    50%{
+        border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%;
+    }
+}

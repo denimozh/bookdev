@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const Hero = () => {
   return (
     <div className='h-[96vh] bg-[#F7C5C5] rounded-[15px] flex flex-col '>
-        <div className='pt-32 pl-10 pr-12'>
+        <div className='pt-28 pl-10 pr-12'>
             <div className='flex flex-row justify-between pb-4'>
                 <p className='text-9xl'>PORTLAND'S</p>
                 <div>
@@ -34,7 +34,7 @@ const Hero = () => {
                 <div className='w-full h-16 pl-5 flex flex-row justify-between items-center'>
                     <input placeholder="Search" className='outline-none'/>
                     <div className=''>
-                        <div className='z-1 bg-black h-20 w-20 rounded-full flex items-center justify-center'>
+                        <div className='z-1 bg-black h-20 w-20 rounded-full flex items-center justify-center cursor-pointer hover:scale-105 ease-in-out duration-500'>
                             <FaArrowRightLong className='text-[30px] text-[#F7C5C5]'/>
                         </div>
                     </div>
