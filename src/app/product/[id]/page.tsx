@@ -4,6 +4,9 @@ import detective1 from "./img/detective1.jpg";
 import { MdMenuBook } from "react-icons/md";
 import { MdOutlineBookOnline } from "react-icons/md";
 import { FaHeadphones } from "react-icons/fa";
+import { FaStar } from "react-icons/fa"
+import reviewer1 from "./img/reviewer1.avif";
+import reviewer2 from "./img/reviewer2.avif";
 
 const page = () => {
   return (
@@ -141,11 +144,85 @@ const page = () => {
             </div>
         </div>
         <div className='h-[40%] bg-black rounded-[20px] flex flex-row gap-1 pb-4'>
-            <div className='basis-1/3 h-full bg-red-200 rounded-[20px] pt-4 pl-4'>
+            <div className='basis-1/3 h-full bg-red-200 rounded-[20px] pt-4 pl-4 pr-4'>
                 <p className='font-semibold'>Editorial Reviews</p>
+                <div className='flex flex-col h-full gap-10 pt-5'>
+                    <div className='flex basis-1/3 flex-col gap-3 text-2xl'>
+                        <p>"The Adventures of Sherlock Holmes by Sir Arthur Conan Doyle is a timeless masterpiece 
+                            featuring twelve captivating short stories. Doyle skillfully weaves intricate plots that 
+                            showcase Holmes' unparalleled deductive skills, while the dynamic between Holmes and Watson 
+                            adds depth."
+                        </p>
+                        <p className='font-semibold'>-The New Yorker</p>
+                    </div>
+                    <div className='flex basis-1/3 flex-col gap-3 text-2xl'>
+                        <p>"Sir Arthur Conan Doyle's The Adventures of Sherlock Holmes is a literary triumph that has 
+                            captivated readers for generations. With a dozen intricately woven short stories, 
+                            Doyle showcases Holmes' brilliant deductive prowess in diverse cases, keeping readers hooked."
+                        </p>
+                        <p className='font-semibold'>-Lionel Trilling</p>
+                    </div>
+                </div>
             </div>
-            <div className='basis-2/3 h-full bg-white rounded-[20px] pt-4 pl-4'>
+            <div className='basis-2/3 h-full bg-white rounded-[20px] pt-4 pl-4 pr-4'>
                 <p className='font-semibold'>Customer Reviews</p>
+                <div className='flex flex-col pt-10 gap-14'>
+                    <div className='flex flex-col'>
+                        <div className='flex flex-row justify-between'>
+                            <div className='flex flex-row'>
+                                <img className="w-12 h-12 rounded-full" src={reviewer1.src}/>
+                                <div className='flex flex-col pl-4'>
+                                    <p>Adam G.</p>
+                                    <p className='text-gray-400'>03.03.2022</p>
+                                </div>
+                            </div>
+                            <div className='flex flex-row'>
+                                <div className='flex flex-row items-center gap-4'>
+                                    <div className='flex flex-row gap-1'>
+                                        <FaStar/>
+                                        <FaStar/>
+                                        <FaStar/>
+                                        <FaStar/>
+                                    </div>
+                                    <div>
+                                        <p>4 / 5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='pl-16 pt-3'>
+                            <p>The Adventures of Sherlock Holmes is an absolute must-read for mystery enthusiasts and literature lovers alike. Sir Arthur Conan Doyle's storytelling prowess shines through in this collection of twelve gripping short stories. The brilliant detective, Sherlock Holmes, and his loyal companion, Dr. Watson, tackle a variety of intriguing cases, each with its own unique twist. The writing is captivating, with vivid descriptions transporting readers to Victorian London. The dynamic between Holmes and Watson adds a delightful layer to the narrative. A timeless classic that continues to captivate readers with its clever mysteries and enduring characters. Highly recommended!</p>
+                        </div>
+                    </div>
+                    <div className='flex flex-col'>
+                        <div className='flex flex-row justify-between'>
+                            <div className='flex flex-row'>
+                                <img className="w-12 h-12 rounded-full" src={reviewer2.src}/>
+                                <div className='flex flex-col pl-4'>
+                                    <p>Anderson D.</p>
+                                    <p className='text-gray-400'>03.03.2022</p>
+                                </div>
+                            </div>
+                            <div className='flex flex-row'>
+                                <div className='flex flex-row items-center gap-4'>
+                                    <div className='flex flex-row gap-1'>
+                                        <FaStar/>
+                                        <FaStar/>
+                                        <FaStar/>
+                                        <FaStar/>
+                                        <FaStar/>
+                                    </div>
+                                    <div>
+                                        <p>5 / 5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='pl-16 pt-3'>
+                            <p>The Adventures of Sherlock Holmes is an absolute must-read for mystery enthusiasts and literature lovers alike. Sir Arthur Conan Doyle's storytelling prowess shines through in this collection of twelve gripping short stories. The brilliant detective, Sherlock Holmes, and his loyal companion, Dr. Watson, tackle a variety of intriguing cases, each with its own unique twist. The writing is captivating, with vivid descriptions transporting readers to Victorian London. The dynamic between Holmes and Watson adds a delightful layer to the narrative. A timeless classic that continues to captivate readers with its clever mysteries and enduring characters. Highly recommended!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

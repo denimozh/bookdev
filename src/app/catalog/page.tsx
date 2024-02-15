@@ -113,11 +113,11 @@ const CatalogPage = () => {
                     </div>
                 </div>
             </Link>
-            <Link href={"/catalog/cultural"} className='group cursor-pointer bg-white rounded-[25px] hover:bg-[#F8F4D8] ease-in-out duration-500'>
+            <Link href={"/catalog/finance"} className='group cursor-pointer bg-white rounded-[25px] hover:bg-[#F8F4D8] ease-in-out duration-500'>
                 <div>
                     <div className='flex flex-row justify-between px-6'>
                         <div className='pt-6 '>
-                            <p className='text-4xl font-medium'>Cultural</p>
+                            <p className='text-4xl font-medium'>Finance</p>
                         </div>
                         <div className='pt-2'>
                                     <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
