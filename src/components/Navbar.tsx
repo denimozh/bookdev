@@ -40,12 +40,16 @@ const Navbar = () => {
                     <p>Stores</p>
                 </div>
                 <div className='flex flex-row gap-3 items-center font-medium'>
-                    <div className='rounded-full bg-[#F6BABA]'>
-                        <FaRegUser className='p-3 text-[50px]'/>
-                    </div>
-                    <div className='rounded-full bg-[#F6BABA]'>
-                        <AiOutlineShopping className='p-2 text-[50px]'/>
-                    </div>
+                    <Link href={"/login"}>
+                        <div className='rounded-full bg-[#F6BABA] hover:bg-[#F9A6A6] ease-in-out duration-500'>
+                            <FaRegUser className='p-3 text-[50px]'/>
+                        </div>
+                    </Link>
+                    <Link href={"/cart"}>
+                        <div className='rounded-full bg-[#F6BABA] hover:bg-[#F9A6A6] ease-in-out duration-500'>
+                            <AiOutlineShopping className='p-2 text-[50px]'/>
+                        </div>
+                    </Link>
                     <div className='rounded-full bg-black'>
                         <IoSearchOutline className='p-2 text-[50px] text-[#F6BABA]'/>
                     </div>
