@@ -1,5 +1,4 @@
 import mongoose from 'mongoose'
-console.log("123")
 const MONGO_URL = process.env.MONGO_URL
 
 if (!MONGO_URL) {
@@ -21,7 +20,7 @@ if (!cached) {
 
 async function dbConnect() {
   if (cached.conn) {
-    return cached.conn
+    return cached.conn;
   }
 
   if (!cached.promise) {
