@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-
+console.log("123")
 const MONGO_URL = process.env.MONGO_URL
 
 if (!MONGO_URL) {
