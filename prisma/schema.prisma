@@ -38,6 +38,7 @@ model Product{
     age Decimal
     category Category @relation(fields: [catSlug], references: [slug])
     catSlug String
+    hoverColor String?
 }
 
 model Order {
