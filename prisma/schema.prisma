@@ -13,6 +13,7 @@ model Category{
     title String
     color String
     hoverColor String
+    img String?
     slug String @unique
     product Product[]
 }
@@ -29,7 +30,7 @@ model Product{
     priceEBook Decimal
     priceAudioBook Decimal
     publisher String
-    publicationDate DateTime
+    publicationDate Int?
     language String
     printLength Decimal
     dimentions Decimal

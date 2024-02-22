@@ -41,7 +41,7 @@ const PicksOfTheMonth = () => {
                                 <p className='text-3xl'>Robert Kiyosaki</p>
                             </div>
                             <div className='px-4 flex justify-between'>
-                                <p className='text-2xl'>🔥200 bought this week🔥</p>
+                                <p className='text-2xl'>200 bought this week</p>
                                 <p className='text-2xl'>102 critic reviews</p>
                             </div>
                         </div>

@@ -5,7 +5,18 @@ import detective2 from "./img/detective2.jpg";
 import detective3 from "./img/detective3.jpg";
 import Link from 'next/link';
 
-const page = () => {
+const page = async () => {
+  const getData = async () => {
+    const res = await fetch("http://localhost:3000/api/catalog",{
+        cache:"no-store"
+    })
+
+    if(!res.ok){
+        throw new Error("Failed!");
+    }
+
+    return res.json()
+}
   return (
     <div>
       <div className='h-[120vh] px-4 flex flex-col gap-4 pb-4 pt-4'>

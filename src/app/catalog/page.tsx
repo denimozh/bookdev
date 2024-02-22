@@ -4,8 +4,23 @@ import styles from './style.module.css'
 import bestSellerPic from "./img/bestSellerPic.jpg";
 import giftbook from "./img/giftbook.webp";
 import Link from 'next/link';
+import { CatalogType } from '@/types/types';
 
-const CatalogPage = () => {
+const getData = async () => {
+    const res = await fetch("http://localhost:3000/api/catalog",{
+        cache:"no-store"
+    })
+
+    if(!res.ok){
+        throw new Error("Failed!");
+    }
+
+    return res.json()
+}
+
+const CatalogPage = async () => {
+
+  const catalog:CatalogType = await getData()
   return (
     <div className='h-[110vh] px-4'>
         <div className='flex flex-row h-[55%] gap-1'>
@@ -71,90 +86,23 @@ const CatalogPage = () => {
                     </div>
                 </div>
             </div>
-            <Link href={"/catalog/detective"} className='group cursor-pointer bg-[#F9A6A6] hover:bg-[#FB8484] rounded-[25px] ease-in-out duration-500'>
-                <div className=''>
-                    <div className='flex flex-row justify-between px-6'>
-                        <div className='pt-6 '>
-                            <p className='text-4xl font-medium'>Detective</p>
-                        </div>
-                        <div className='pt-2'>
-                                    <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
-                                        <FaArrowRightLong className='text-[35px] text-white'/>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </Link>
-            <Link href={"/catalog/fantasy"} className='group cursor-pointer bg-white rounded-[25px] hover:bg-[#F8F4D8] ease-in-out duration-500'>
-                <div>
-                    <div className='flex flex-row justify-between px-6'>
-                        <div className='pt-6 '>
-                            <p className='text-4xl font-medium'>Fantasy</p>
-                        </div>
-                        <div className='pt-2'>
-                                    <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
-                                        <FaArrowRightLong className='text-[35px] text-white'/>
-                                    </div>
+            {catalog.map((category) =>
+                <Link href={`/catalog/${category.slug}`} key={category.id} className={`group cursor-pointer ${category.color} ${category.hoverColor} rounded-[25px] ease-in-out duration-500`}>
+                    <div className=''>
+                        <div className='flex flex-row justify-between px-6'>
+                            <div className='pt-6 '>
+                                <p className='text-4xl font-medium'>{category.title}</p>
+                            </div>
+                            <div className='pt-2'>
+                                        <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
+                                            <FaArrowRightLong className='text-[35px] text-white'/>
+                                        </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </Link>
-            <Link href={"/catalog/horror"} className='group cursor-pointer bg-[#F9A6A6] rounded-[25px] hover:bg-[#FB8484] ease-in-out duration-500'>
-                <div>
-                    <div className='flex flex-row justify-between px-6'>
-                        <div className='pt-6 '>
-                            <p className='text-4xl font-medium'>Horror</p>
-                        </div>
-                        <div className='pt-2'>
-                                    <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
-                                        <FaArrowRightLong className='text-[35px] text-white'/>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </Link>
-            <Link href={"/catalog/finance"} className='group cursor-pointer bg-white rounded-[25px] hover:bg-[#F8F4D8] ease-in-out duration-500'>
-                <div>
-                    <div className='flex flex-row justify-between px-6'>
-                        <div className='pt-6 '>
-                            <p className='text-4xl font-medium'>Finance</p>
-                        </div>
-                        <div className='pt-2'>
-                                    <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
-                                        <FaArrowRightLong className='text-[35px] text-white'/>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </Link>
-            <Link href={"/catalog/education"} className='group cursor-pointer bg-[#F9A6A6] hover:bg-[#FB8484] rounded-[25px] ease-in-out duration-500'>
-                <div>
-                    <div className='flex flex-row justify-between px-6'>
-                        <div className='pt-6 '>
-                            <p className='text-4xl font-medium'>Education</p>
-                        </div>
-                        <div className='pt-2'>
-                                    <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
-                                        <FaArrowRightLong className='text-[35px] text-white'/>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </Link>
-            <Link href={"/catalog/science"} className='group cursor-pointer bg-white rounded-[25px] hover:bg-[#F8F4D8] ease-in-out duration-500'>
-                <div>
-                    <div className='flex flex-row justify-between px-6'>
-                        <div className='pt-6 '>
-                            <p className='text-4xl font-medium'>Science</p>
-                        </div>
-                        <div className='pt-2'>
-                                    <div className='z-1 bg-black cursor-pointer h-16 w-16 rounded-full flex items-center justify-center group-hover:scale-105 ease-in-out duration-500'>
-                                        <FaArrowRightLong className='text-[35px] text-white'/>
-                                    </div>
-                        </div>
-                    </div>
-                </div>
-            </Link>
+                </Link>
+            )}
+            
         </div>
         <div className='h-[55%] px-1 pt-1 pb-4'>
             <div className='flex flex-row gap-1 h-[100%]'>
