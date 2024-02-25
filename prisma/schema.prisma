@@ -41,15 +41,6 @@ model Product{
     hoverColor String?
 }
 
-model Order {
-  id String @id @default(cuid())
-  createdAt DateTime @default(now())
-  price Decimal
-  products Json[]
-  status String
-  intent_id String? @unique
-}
-
 model Account {
   id                 String  @id @default(cuid())
   userId             String
@@ -86,6 +77,7 @@ model User {
   isAdmin       Boolean @default(false)
   accounts      Account[]
   sessions      Session[]
+  Order Order[]
 }
 
 model VerificationToken {
@@ -94,4 +86,15 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Order {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  price Decimal
+  products Json[]
+  status String
+  intent_id String? @unique
+  user User @relation(fields: [userEmail], references: [email])
+  userEmail String
 }

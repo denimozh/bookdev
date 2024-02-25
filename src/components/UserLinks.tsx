@@ -11,13 +11,13 @@ const UserLinks = () => {
   return (
     <div>
         {status === "authenticated" ? (
-            <div>
+            <div className='flex flex-row gap-4 items-center'>
                 <Link href={"/orders"}>
                     <div className='rounded-full bg-[#F6BABA] hover:bg-[#F9A6A6] ease-in-out duration-500'>
                         <FaNewspaper className='p-3 text-[50px]'/>
                     </div>
                 </Link>
-                <span className='ml-4 cursor-pointer' onClick={()=>signOut()}>Logout</span>
+                <span className='cursor-pointer' onClick={()=>signOut()}>Logout</span>
             </div> ) : (
             <Link href={"/login"}>
                 <div className='rounded-full bg-[#F6BABA] hover:bg-[#F9A6A6] ease-in-out duration-500'>
