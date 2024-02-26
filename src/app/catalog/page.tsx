@@ -1,10 +1,10 @@
 import React from 'react'
 import { FaArrowRightLong } from "react-icons/fa6";
 import styles from './style.module.css'
-import bestSellerPic from "./img/bestSellerPic.jpg";
 import giftbook from "./img/giftbook.webp";
 import Link from 'next/link';
 import { CatalogType } from '@/types/types';
+import Marquee from 'react-fast-marquee'
 
 const getData = async () => {
     const res = await fetch("http://localhost:3000/api/catalog",{
@@ -140,6 +140,13 @@ const CatalogPage = async () => {
                     </div>
                 </Link>
             </div>
+        </div>
+        <div className='bg-white'>
+            <Marquee autoFill={true} speed={85} >
+                <div className='px-4'>
+                    <p className='text-6xl text-black overflow-hidden py-10'>Summer Sale -20%</p>
+                </div>
+            </Marquee>
         </div>
     </div>
   )

@@ -3,6 +3,7 @@ import { FaRegUser } from "react-icons/fa";
 import { AiOutlineShopping } from "react-icons/ai";
 import { IoSearchOutline } from "react-icons/io5";
 import Link from 'next/link'
+import UserLinks from './UserLinks';
 
 const Navbar = () => {
   return (
@@ -40,11 +41,7 @@ const Navbar = () => {
                     <p>Stores</p>
                 </div>
                 <div className='flex flex-row gap-3 items-center font-medium'>
-                    <Link href={"/login"}>
-                        <div className='rounded-full bg-[#F6BABA] hover:bg-[#F9A6A6] ease-in-out duration-500'>
-                            <FaRegUser className='p-3 text-[50px]'/>
-                        </div>
-                    </Link>
+                    <UserLinks/>
                     <Link href={"/cart"}>
                         <div className='rounded-full bg-[#F6BABA] hover:bg-[#F9A6A6] ease-in-out duration-500'>
                             <AiOutlineShopping className='p-2 text-[50px]'/>
