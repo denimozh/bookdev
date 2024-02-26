@@ -24,3 +24,23 @@ export type ProductType = {
     age?: number;
     hoverColor?: string;
 }[];
+
+export type OrderType = {
+    id: string;
+    userEmail: string;
+    price: number;
+    products: CartItemType[];
+    status: string;
+    createdAt: Date;
+    intent_id?: String;
+  };
+
+  export type CartItemType = {
+    id: string;
+    title: string;
+    img: string;
+    price: number;
+    optionTitle?: string;
+    quantity?: number;
+  }
+  
