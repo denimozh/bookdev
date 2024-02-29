@@ -27,76 +27,7 @@ const page = async ({ params }: { params: { id: string } }) => {
                     <img src={singleProduct.img} className="scale-95" />
                 </div>
                 <div className="flex flex-col basis-2/3 gap-1">
-                    <div className="flex flex-col justify-between bg-white h-[85%]  rounded-[20px] pt-4 pl-4">
-                        <div className="flex flex-col">
-                            <div className="flex flex-row gap-3 text-gray-500">
-                                <p className="capitalize">
-                                    {singleProduct.catSlug}
-                                </p>
-                                <p className="">-</p>
-                                <p className="">{singleProduct.publisher}</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-5">
-                            <div className="flex flex-col gap-4">
-                                <p className="text-5xl font-semibold pl-1">
-                                    {singleProduct.title}
-                                </p>
-                                <p className="font-semibold pl-2">
-                                    By Arthur Conan Doyle
-                                </p>
-                                <div className="flex flex-row w-[80%]">
-                                    <Price product={singleProduct} />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-4 grid-rows-4 gap-4 pt-5 pl-4 pb-5">
-                                <div className="flex flex-row text-gray-500">
-                                    Publisher
-                                </div>
-                                <div className="flex flex-row font-semibold">
-                                    {singleProduct.publisher}
-                                </div>
-                                <div className="flex flex-row text-gray-500">
-                                    Print Length
-                                </div>
-                                <div className="flex flex-row font-semibold">
-                                    {singleProduct.printLength}
-                                </div>
-                                <div className="flex flex-row text-gray-500">
-                                    Publication Date
-                                </div>
-                                <div className="flex flex-row font-semibold">
-                                    {singleProduct.date}
-                                </div>
-                                <div className="flex flex-row text-gray-500">
-                                    Dimensions
-                                </div>
-                                <div className="flex flex-row font-semibold">
-                                    {singleProduct.dimensions}
-                                </div>
-                                <div className="flex flex-row text-gray-500">
-                                    Language
-                                </div>
-                                <div className="flex flex-row font-semibold">
-                                    {singleProduct.language}
-                                </div>
-                                <div className="flex flex-row text-gray-500">
-                                    Age
-                                </div>
-                                <div className="flex flex-row font-semibold">
-                                    {singleProduct.age}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="flex flex-row h-[15%] gap-1">
-                        <div className="flex basis-2/3 bg-red-200 rounded-[20px] cursor-pointer justify-center items-center">
-                            <p className="text-4xl font-medium">Add To Cart</p>
-                        </div>
-                        <div className="flex basis-1/3 bg-orange-200 rounded-[20px] cursor-pointer justify-center items-center">
-                            <p className="text-4xl font-medium">WishList</p>
-                        </div>
-                    </div>
+                    <Price product={singleProduct} />
                 </div>
             </div>
             <Slider />

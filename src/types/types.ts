@@ -12,7 +12,7 @@ export type ProductType = {
     desc?: string;
     fragment?: string;
     img: string;
-    priceHard?: number;
+    price: number;
     priceEBook?: number;
     priceAudioBook?: number;
     publisher?: string;
@@ -20,7 +20,7 @@ export type ProductType = {
     language?: string;
     printLength?: number;
     dimentions?: number;
-    editorialReviews?: { review: string, source: string }[];
+    editorialReviews?: { review: string; source: string }[];
     age?: number;
     hoverColor?: string;
 }[];
@@ -33,14 +33,23 @@ export type OrderType = {
     status: string;
     createdAt: Date;
     intent_id?: String;
-  };
+};
 
-  export type CartItemType = {
+export type CartItemType = {
     id: string;
     title: string;
     img: string;
     price: number;
     optionTitle?: string;
-    quantity?: number;
-  }
-  
+};
+
+export type CartType = {
+    products: CartItemType[];
+    totalItems: number;
+    totalPrice: number;
+};
+
+export type ActionTypes = {
+    addToCart: (item: CartItemType) => void;
+    removeFromCart: (item: CartItemType) => void;
+};
