@@ -1,4 +1,5 @@
-"use client"
+
+'use client'
 
 import { signIn, useSession } from 'next-auth/react'
 import Image from 'next/image'
@@ -6,10 +7,10 @@ import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
-  const { data, status } = useSession();
+  const { data, status } = useSession()
 
-  console.log("data: " + data);
-  console.log("status: " + status);
+  console.log('data: ', data)
+  console.log('status: ', status)
   return (
     <div className="px-4">
       <div className='h-[100vh] md:h-[calc(100vh-9rem)] flex items-center justify-center bg-red-100 rounded-[20px]'>
@@ -23,7 +24,7 @@ const page = () => {
           <div className="p-10 flex flex-col gap-8 md:w-1/2">
             <h1 className="font-bold text-xl xl:text-3xl">Welcome</h1>
             <p>Log into your account or create a new one using social buttons</p>
-            <button className="flex gap-4 p-4 ring-1 ring-red-400 rounded-md hover:bg-red-200" onClick={()=>signIn("google")}>
+            <button className="flex gap-4 p-4 ring-1 ring-red-400 rounded-md hover:bg-red-200" onClick={() => signIn('google')}>
               <Image
                 src="/google.png"
                 alt=""
