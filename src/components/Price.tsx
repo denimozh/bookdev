@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaHeadphones } from 'react-icons/fa6';
 import { MdMenuBook, MdOutlineBookOnline } from 'react-icons/md';
 import { useState } from 'react';
@@ -13,6 +13,10 @@ const Price = ({ product }: { product: ProductType }) => {
     const [option, setOption] = useState('Hardcover');
 
     const { addToCart } = useCartStore();
+
+    useEffect(() => {
+        useCartStore.persist.rehydrate()
+    }, [])
 
     const handleCart = () => {
         addToCart({

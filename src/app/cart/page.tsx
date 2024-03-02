@@ -1,11 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import testimg from './img/p1.png';
 import { useCartStore } from '@/utils/store';
 
 const page = () => {
     const { products, totalItems, totalPrice, removeFromCart } = useCartStore();
+
+    useEffect(() => {
+        useCartStore.persist.rehydrate()
+    }, [])
+
     return (
         <div className="h-[100vh] md:h-[calc(100vh-9rem)] flex flex-col text-red-500 lg:flex-row px-4 gap-2">
             {/* PRODUCTS CONTAINER */}
@@ -52,7 +57,7 @@ const page = () => {
                 <hr className="my-2" />
                 <div className="flex justify-between">
                     <span className="">TOTAL(INCL. VAT)</span>
-                    <span className="font-bold">${totalItems}</span>
+                    <span className="font-bold">${totalPrice}</span>
                 </div>
                 <button className="bg-red-500 text-white p-3 rounded-md w-1/2 self-end">
                     CHECKOUT
