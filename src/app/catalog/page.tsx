@@ -21,7 +21,7 @@ const getData = async () => {
 const CatalogPage = async () => {
     const catalog: CatalogType = await getData();
     return (
-        <div className="h-[110vh] px-4">
+        <div className="h-[130vh] px-4">
             <div className="flex flex-row h-[55%] gap-1">
                 <div className="w-[55%] bg-catalogBooks bg-auto rounded-[15px] bg-blend-soft-light bg-stone-700">
                     <div className="flex flex-col px-8 justify-between h-[100%] pb-10">
